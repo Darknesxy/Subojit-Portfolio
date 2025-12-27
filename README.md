@@ -35,4 +35,30 @@ A clean, modern and responsive personal portfolio website to showcase my project
 ## Getting Started
 
 1. **Clone this repository**
-2. 
+
+2. **Open in browser**
+
+- Project folder open karo.  
+- `index.html` file browser me open kar do.
+
+---
+
+## Installation (VS Code + Live Server)
+
+1. Folder ko **VS Code** me open karo.  
+2. Extensions se **Live Server** install karo.  
+3. `index.html` par right‑click → **Open with Live Server**.
+
+---
+
+## Usage
+
+- `index.html` me text, sections aur links apne according change karo.  
+- `style.css` me colors, fonts aur spacing customize kar sakte ho.  
+- `script.js` me animations / interactions tweak kar sakte ho.
+
+---
+
+## Show your support
+
+If you like this portfolio, please ⭐ star the repo and share it!
