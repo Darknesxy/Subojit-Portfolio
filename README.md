@@ -6,7 +6,7 @@ A clean, modern and responsive personal portfolio website to showcase my project
 
 ## TL;DR
 
-- 🔗 **Live demo**: https://YOUR-USERNAME.github.io/Subojit-Portfolio  
+- 🔗 **Live demo**: https://darknesxy.github.io/Subojit-Portfolio/
 - 🧑‍💻 **Tech**: HTML, CSS, JavaScript  
 - 📬 **Contact form**: Formspree (`https://formspree.io/f/mvzokqyl`)
 
