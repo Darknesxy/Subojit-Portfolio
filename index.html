@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Subojit Das • Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for brand icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-inner container">
+      <div class="brand">Subojit Das</div>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button id="hamburger" class="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <!-- HOME -->
+    <section id="home" class="home-section">
+      <div class="home-inner container">
+        <!-- LEFT: Avatar -->
+        <div class="home-left">
+          <div class="avatar-wrap">
+            <img src="photome/IMG_20251227_113906.png" alt="Subojit Das" id="mainAvatar" />
+            <div class="avatar-ring"></div>
+          </div>
+
+          <div class="social-compact">
+            <a class="yt" href="https://youtube.com/@darknesxycoading-b7u?si=kvMjQsSKuUQ944xR" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a class="ig" href="https://www.instagram.com/sxbojit?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a class="gh" href="https://github.com/Darknesxy?tab=stars" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a class="tw" href="#" target="_blank" aria-label="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a class="up" href="#" target="_blank" aria-label="Upwork"><i class="fa-brands fa-upwork"></i></a>
+          </div>
+        </div>
+
+        <!-- RIGHT: Intro -->
+        <div class="home-right">
+          <p class="greet">Hello, I’m</p>
+          <h1 class="hero-name">Subojit <span class="surname">Das</span></h1>
+
+          <h2 class="role-line">And I’m a <span id="dynamicRole" class="typed"></span><span class="caret">|</span></h2>
+
+          <p class="hero-desc">
+            I am doing B.TECH in Software Engineering (Studying) • Web learner • Creator. 
+            I build modern, minimal interfaces & create engaging video content.
+          </p>
+
+          <div class="cta">
+            <a href="#contact" class="btn primary">Hire Me</a>
+            <a href="#contact" class="btn ghost">Contact Me</a>
+            <a href="subojit-CV.pdf" download class="btn ghost">Download CV</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- STATS -->
+      <div class="home-stats container">
+        <div class="stat-card">
+          <strong class="stat-number" data-target="3">3+</strong>
+          <span>Projects</span>
+        </div>
+        <div class="stat-card">
+          <strong class="stat-number" data-target="100">100+</strong>
+          <span>Happy viewers</span>
+        </div>
+        <div class="stat-card">
+          <strong class="stat-number" data-target="5">5+</strong>
+          <span>Technologies</span>
+        </div>
+        <div class="stat-card">
+          <strong class="stat-number" data-target="1">1+</strong>
+          <span>Freelance</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about-section container">
+      <div class="section-grid">
+        <div class="about-photo box-glow">
+          <img src="my photo/IMG_20251227_114452.png" alt="Subojit Photo" />
+        </div>
+        <div class="about-text box-glow">
+          <h3>About Me</h3>
+          <p>
+            I’m a B.TECH student in Software Engineering, learning web development and building content for YouTube. 
+            I focus on clean UI, fast performance and practical projects.
+          </p>
+
+          <div class="info-grid">
+            <div><strong>Name</strong><span>Subojit Das</span></div>
+            <div><strong>From</strong><span>Silchar, Assam</span></div>
+            <div><strong>Education</strong><span>B.TECH in Software Engineering (Pursuing)</span></div>
+            <div><strong>Freelance</strong><span>Available</span></div>
+          </div>
+
+          <a class="btn primary" href="#portfolio">View Work</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section skills-section container">
+      <h3 class="section-title">Skills</h3>
+      <p class="section-sub">My technical & development skills shown with animated progress bars.</p>
+
+      <div class="skills-grid">
+        <div class="skills-col box-glow">
+          <h4>Coding</h4>
+          <div class="skill">
+            <label>HTML</label>
+            <div class="progress" data-percent="90"><span style="width:0%"></span><strong>90%</strong></div>
+          </div>
+          <div class="skill">
+            <label>CSS</label>
+            <div class="progress" data-percent="85"><span style="width:0%"></span><strong>85%</strong></div>
+          </div>
+          <div class="skill">
+            <label>JavaScript</label>
+            <div class="progress" data-percent="60"><span style="width:0%"></span><strong>60%</strong></div>
+          </div>
+        </div>
+
+        <div class="skills-col box-glow">
+          <h4>Development</h4>
+          <div class="skill">
+            <label>Website Development</label>
+            <div class="progress" data-percent="80"><span style="width:0%"></span><strong>80%</strong></div>
+          </div>
+          <div class="skill">
+            <label>Flutter App Development</label>
+            <div class="progress" data-percent="75"><span style="width:0%"></span><strong>75%</strong></div>
+          </div>
+          <div class="skill">
+            <label>Basic Cyber & Security</label>
+            <div class="progress" data-percent="70"><span style="width:0%"></span><strong>70%</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section services-section container">
+      <h3 class="section-title">Services</h3>
+      <p class="section-sub">What I build for web & apps.</p>
+
+      <div class="services-grid">
+        <div class="service-card box-glow service-tilt">
+          <span class="service-tag">Web</span>
+          <i class="fa-solid fa-laptop-code service-icon"></i>
+          <h4>Website Development</h4>
+          <p>Landing pages, portfolios & small business sites with clean HTML, CSS & JavaScript.</p>
+        </div>
+
+        <div class="service-card box-glow service-tilt">
+          <span class="service-tag">Tools</span>
+          <i class="fa-solid fa-code service-icon"></i>
+          <h4>Web Apps & Utilities</h4>
+          <p>EMI calculators, password generators and other custom JS utilities.</p>
+        </div>
+
+        <div class="service-card box-glow service-tilt">
+          <span class="service-tag">Apps</span>
+          <i class="fa-solid fa-mobile-screen-button service-icon"></i>
+          <h4>Flutter App Development</h4>
+          <p>Basic Android apps with Flutter for practice and small projects.</p>
+        </div>
+
+        <div class="service-card box-glow service-tilt">
+          <span class="service-tag">Security</span>
+          <i class="fa-solid fa-shield-halved service-icon"></i>
+          <h4>Security & Basics</h4>
+          <p>Basic cyber security & safe web practices (no illegal hacking).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="section portfolio-section container">
+      <h3 class="section-title">Portfolio</h3>
+      <p class="section-sub">Selected projects and experiments.</p>
+
+      <div class="portfolio-grid">
+        <div class="proj box-glow">
+          <img src="project 1/IMG_20251227_134743.jpg" alt="Project 1">
+          <div class="proj-overlay"><h4>Project 1</h4><a href="#">View</a></div>
+        </div>
+        <div class="proj box-glow">
+          <img src="project 2/IMG_20251227_135047.jpg" alt="Project 2">
+          <div class="proj-overlay"><h4>Project 2</h4><a href="#">View</a></div>
+        </div>
+        <div class="proj box-glow">
+          <img src="project 3/Picsart_25-12-27_13-59-34-524.jpg" alt="Project 3">
+          <div class="proj-overlay"><h4>Project 3</h4><a href="#">View</a></div>
+        </div>
+        <div class="proj box-glow">
+          <img src="project 4/Picsart_25-12-27_14-08-46-426.jpg" alt="Project 4">
+          <div class="proj-overlay"><h4>Project 4</h4><a href="#">View</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact-section container">
+      <h3 class="section-title">Contact</h3>
+      <p class="section-sub">
+        Ready to work together?
+      </p>
+
+      <div class="contact-grid">
+        <!-- Formspree-connected form -->
+        <form class="contact-form box-glow"
+              id="contactForm"
+              action="https://formspree.io/f/mvzokqyl"
+              method="POST">
+          <h4>Send a message</h4>
+
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Your name" required>
+          </label>
+
+          <label>
+            Email
+            <input type="email" name="_replyto" placeholder="Your email" required>
+          </label>
+
+          <label>
+            Message
+            <textarea name="message" rows="4" placeholder="Write a message..." required></textarea>
+          </label>
+
+          <button type="submit" class="btn primary full-width">Send Message</button>
+        </form>
+
+        <div class="contact-info box-glow">
+          <h4>Connect with me</h4>
+          <p>Socials & quick links</p>
+          <div class="social-row">
+            <a class="yt" href="https://youtube.com/@darknesxycoading-b7u?si=kvMjQsSKuUQ944xR" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a class="ig" href="https://www.instagram.com/sxbojit?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a class="gh" href="https://github.com/Darknesxy?tab=stars" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a class="tw" href="#" target="_blank" aria-label="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a class="up" href="#" target="_blank" aria-label="Upwork"><i class="fa-brands fa-upwork"></i></a>
+          </div>
+
+          <div class="mini-info">
+            <div><strong>Location</strong><span> : Silchar, Assam</span></div>
+            <div><strong>Available</strong><span> : Freelance</span></div>
+            <div><strong>Email</strong><span> : sar**********1@gmail.com</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">© 2025 • Made by Subojit</div>
+  </footer>
+
+  <!-- DEMO CHATBOT (floating) -->
+  <div id="chatbot">
+    <button id="chatToggle" class="chat-toggle" aria-label="Open chat">
+      <i class="fa-solid fa-robot"></i>
+    </button>
+
+    <div id="chatWindow" class="chat-window" aria-hidden="true">
+      <div class="chat-header">
+        <div class="bot-name">Subojit Assistant 🤖</div>
+        <button id="chatClose" class="chat-close" aria-label="Close chat">&times;</button>
+      </div>
+      <div class="chat-body" id="chatBody">
+        <div class="msg bot">Hi! I'm a demo bot. Ask about services or say "help".</div>
+      </div>
+
+      <form id="chatForm" class="chat-form" onsubmit="return false;">
+        <input id="chatInput" placeholder="Type a message..." autocomplete="off" />
+        <button id="chatSend" class="btn">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
