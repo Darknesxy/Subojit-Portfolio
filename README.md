@@ -1,64 +1,68 @@
-# Subojit Portfolio – v1.0
+# # 👨‍💻 Subojit Sarkar — Personal Portfolio Website
 
-A clean, modern and responsive personal portfolio website to showcase my projects, skills and services.
+> A high-quality, modern, and fully responsive personal portfolio website built to showcase my skills, projects, and services in a clean and professional manner.
 
----
-
-## TL;DR
-
-- 🔗 **Live demo**: https://darknesxy.github.io/Subojit-Portfolio/
-- 🧑‍💻 **Tech**: HTML, CSS, JavaScript  
-- 📬 **Contact form**: Formspree (`https://formspree.io/f/mvzokqyl`)
+![HTML5](https://img.shields.io/badge/HTML5-Standard-orange?style=flat-square&logo=html5)
+![CSS3](https://img.shields.io/badge/CSS3-Modern-blue?style=flat-square&logo=css3)
+![JavaScript](https://img.shields.io/badge/JavaScript-Vanilla-yellow?style=flat-square&logo=javascript)
+![Status](https://img.shields.io/badge/Project-Live-success?style=flat-square)
+![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen?style=flat-square)
 
 ---
 
-## Built With
+## 🌍 Live Preview
 
-- HTML5 semantic layout  
-- Modern CSS3 (Flexbox, Grid, animations)  
-- Vanilla JavaScript for interactions  
-- Google Fonts – Poppins  
-- Font Awesome icons
+🚀 **View the live website:**  
+🔗 https://darknesxy.github.io/Subojit-Portfolio/
 
 ---
 
-## Features
+## 📖 Overview
 
-- Single page layout with smooth navigation.  
-- Fully responsive design for mobile, tablet and desktop.  
-- Animated stats and skill progress bars.  
-- Portfolio grid with hover effects for projects.  
-- Working contact form that sends messages to my email.
+This portfolio website is designed to create a **strong first impression** for clients, recruiters, and collaborators.  
+It focuses on **simplicity, performance, and professionalism**, while maintaining a visually appealing design.
 
----
-
-## Getting Started
-
-1. **Clone this repository**
-
-2. **Open in browser**
-
-- Project folder open karo.  
-- `index.html` file browser me open kar do.
+The website highlights:
+- My technical skills  
+- Selected projects  
+- Services I offer  
+- A working contact system  
 
 ---
 
-## Installation (VS Code + Live Server)
+## 🧰 Tech Stack
 
-1. Folder ko **VS Code** me open karo.  
-2. Extensions se **Live Server** install karo.  
-3. `index.html` par right‑click → **Open with Live Server**.
+The project is built using **pure frontend technologies** without any frameworks.
 
----
-
-## Usage
-
-- `index.html` me text, sections aur links apne according change karo.  
-- `style.css` me colors, fonts aur spacing customize kar sakte ho.  
-- `script.js` me animations / interactions tweak kar sakte ho.
+- **HTML5** – Semantic and SEO-friendly structure  
+- **CSS3** – Flexbox, Grid, transitions & animations  
+- **JavaScript (Vanilla)** – Interactive UI behavior  
+- **Google Fonts** – Poppins  
+- **Font Awesome** – Icons  
+- **Formspree** – Contact form integration  
 
 ---
 
-## Show your support
+## ✨ Key Features
 
-If you like this portfolio, please ⭐ star the repo and share it!
+✅ Fully responsive on all devices  
+✅ Clean and modern UI design  
+✅ Smooth navigation and transitions  
+✅ Animated skill progress indicators  
+✅ Project showcase with hover effects  
+✅ Functional contact form (email delivery)  
+✅ Fast loading & lightweight  
+
+---
+
+## 📁 Folder Structure
+
+```text
+Subojit-Portfolio/
+│
+├── index.html        # Main HTML file
+├── style.css         # Stylesheet
+├── script.js         # JavaScript logic
+├── README.md         # Project documentation
+├── images/           # Project & profile images
+└── assets/           # Icons / other resources
