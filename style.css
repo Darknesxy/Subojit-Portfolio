@@ -433,3 +433,60 @@ services-grid .service-card:nth-child(4){animation-delay:.35s;}
   .portfolio-grid{grid-template-columns:1fr}
   .avatar-wrap{width:220px;height:220px}
 }
+/* ===== MOBILE HORIZONTAL OVERFLOW FIX ===== */
+
+.home-inner,
+.home-right {
+  min-width: 0;
+  width: 100%;
+}
+
+.hero-name,
+.role-line,
+.hero-desc {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.role-line {
+  line-height: 1.4;
+  min-height: 2.8em;
+}
+
+#dynamicRole {
+  white-space: normal;
+}
+
+.cta {
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+@media (max-width: 560px) {
+  .home-right {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+  }
+
+  .hero-name {
+    font-size: 2rem;
+  }
+
+  .role-line {
+    font-size: 1.45rem;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+  }
+
+  .cta {
+    justify-content: center;
+  }
+
+  .btn {
+    max-width: 100%;
+  }
+}
