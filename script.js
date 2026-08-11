@@ -7,32 +7,58 @@
    - smooth nav link highlight (basic)
 */
 
-// ===== typing / rotating roles =====
-const roles = ["Building For The Web", "YouTuber", "Exploring Cloud Security", "Learning Cyber Security", "Breaking Thing Ethically", "Cloud Security Learner"];
+// ===== typing / rotating roles ====
+const roles = [
+  "Cybersecurity Learner",
+  "Cloud Security Learner",
+  "Web Developer",
+  "AWS & Linux Learner",
+  "Ethical Hacking Learner"
+];
+
 const roleEl = document.getElementById("dynamicRole");
-let rIndex = 0, cIndex = 0, typing = true;
 
-const typeSpeed = 75, deleteSpeed = 40, hold = 1000;
+let rIndex = 0;
+let cIndex = 0;
+let typing = true;
 
-function typeTick(){
+const typeSpeed = 70;
+const deleteSpeed = 40;
+const hold = 1200;
+
+function typeTick() {
+  if (!roleEl) return;
+
   const word = roles[rIndex];
-  if (typing){
+
+  if (typing) {
     cIndex++;
-    roleEl.textContent = word.slice(0, cIndex);
-    if (cIndex === word.length){
+    roleEl.textContent = word.substring(0, cIndex);
+
+    if (cIndex >= word.length) {
       typing = false;
       setTimeout(typeTick, hold);
-    } else setTimeout(typeTick, typeSpeed);
+    } else {
+      setTimeout(typeTick, typeSpeed);
+    }
+
   } else {
     cIndex--;
-    roleEl.textContent = word.slice(0, cIndex);
-    if (cIndex === 0){
-      typing = true; rIndex = (rIndex+1)%roles.length;
+    roleEl.textContent = word.substring(0, cIndex);
+
+    if (cIndex <= 0) {
+      typing = true;
+      rIndex = (rIndex + 1) % roles.length;
       setTimeout(typeTick, 300);
-    } else setTimeout(typeTick, deleteSpeed);
+    } else {
+      setTimeout(typeTick, deleteSpeed);
+    }
   }
 }
-document.addEventListener("DOMContentLoaded", ()=>{ typeTick(); });
+
+document.addEventListener("DOMContentLoaded", typeTick);
+
+
 
 // ===== hamburger for mobile nav =====
 const hamburger = document.getElementById("hamburger");
