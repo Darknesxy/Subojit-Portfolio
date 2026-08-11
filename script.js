@@ -128,8 +128,7 @@ function setActiveLink(){
 }
 window.addEventListener("scroll", setActiveLink);
 window.addEventListener("load", setActiveLink);
-
-// ===== DEMO chatbot =====
+// ===== UPGRADED PORTFOLIO CHATBOT =====
 const chatToggle = document.getElementById("chatToggle");
 const chatWindow = document.getElementById("chatWindow");
 const chatClose = document.getElementById("chatClose");
@@ -137,50 +136,189 @@ const chatBody = document.getElementById("chatBody");
 const chatInput = document.getElementById("chatInput");
 const chatForm = document.getElementById("chatForm");
 
-chatToggle.addEventListener("click", ()=>{
-  if (chatWindow.style.display === "flex"){
+// Open / close chatbot
+chatToggle?.addEventListener("click", () => {
+  const isOpen = chatWindow.style.display === "flex";
+
+  if (isOpen) {
     chatWindow.style.display = "none";
     chatToggle.style.transform = "scale(1)";
+    chatWindow.setAttribute("aria-hidden", "true");
   } else {
     chatWindow.style.display = "flex";
     chatToggle.style.transform = "scale(1.08)";
-    chatWindow.setAttribute("aria-hidden","false");
+    chatWindow.setAttribute("aria-hidden", "false");
+    chatInput?.focus();
   }
 });
-chatClose.addEventListener("click", ()=>{
+
+chatClose?.addEventListener("click", () => {
   chatWindow.style.display = "none";
-  chatWindow.setAttribute("aria-hidden","true");
+  chatToggle.style.transform = "scale(1)";
+  chatWindow.setAttribute("aria-hidden", "true");
 });
 
-// simple demo responses
-function botReply(msg){
-  const text = msg.toLowerCase();
-  if (text.includes("service") || text.includes("services")) return "I offer Web Design, Graphic Design, Video Editing and Freelance setup help.";
-  if (text.includes("hire") || text.includes("price") || text.includes("cost")) return "Send me your project details — I'll reply with a timeline & quote.";
-  if (text.includes("youtube") || text.includes("video")) return "I create & edit YouTube videos and thumbnails. Share your video idea!";
-  if (text.includes("hello") || text.includes("hi")) return "Hello! How can I help you today?";
-  if (text.includes("help")) return "You can ask about Services, Portfolio or how to hire me.";
-  return "Nice question — this is a demo bot. For full chat, we'll connect real AI later.";
+
+// ===== BOT KNOWLEDGE =====
+function botReply(msg) {
+  const text = msg.toLowerCase().trim();
+
+  if (
+    text.includes("hello") ||
+    text.includes("hi") ||
+    text.includes("hey")
+  ) {
+    return "Hey! 👋 I'm Subojit's portfolio assistant. Ask me about his skills, projects, services, education, or contact details.";
+  }
+
+  if (
+    text.includes("skill") ||
+    text.includes("skills") ||
+    text.includes("technology") ||
+    text.includes("technologies")
+  ) {
+    return "💻 Subojit's current skills include HTML, CSS, JavaScript, Web Development, Cloud Computing, Linux, and Cybersecurity fundamentals.";
+  }
+
+  if (
+    text.includes("project") ||
+    text.includes("projects") ||
+    text.includes("portfolio")
+  ) {
+    return "🚀 You can explore Subojit's projects in the Portfolio section. He is currently building web projects and exploring Cloud & Cybersecurity.";
+  }
+
+  if (
+    text.includes("service") ||
+    text.includes("services")
+  ) {
+    return "🛠️ Current services include Website Development, Web Apps & JavaScript Utilities, basic Flutter App Development, and basic Cybersecurity-focused web practices.";
+  }
+
+  if (
+    text.includes("education") ||
+    text.includes("study") ||
+    text.includes("college") ||
+    text.includes("bca")
+  ) {
+    return "🎓 Subojit is currently pursuing a BCA in Cloud Computing & Cyber Security.";
+  }
+
+  if (
+    text.includes("cyber") ||
+    text.includes("security") ||
+    text.includes("hacking")
+  ) {
+    return "🛡️ Subojit is learning Cybersecurity and Ethical Hacking through hands-on practice, focusing on safe and ethical security learning.";
+  }
+
+  if (
+    text.includes("cloud") ||
+    text.includes("aws") ||
+    text.includes("linux")
+  ) {
+    return "☁️ Subojit is exploring Cloud Computing, AWS, Linux, and Cloud Security.";
+  }
+
+  if (
+    text.includes("hire") ||
+    text.includes("contact") ||
+    text.includes("work") ||
+    text.includes("freelance")
+  ) {
+    return "🤝 Interested in working with Subojit? Use the Contact section of this portfolio to send a message.";
+  }
+
+  if (
+    text.includes("youtube") ||
+    text.includes("video")
+  ) {
+    return "🎥 Subojit also creates tech-related content on YouTube. Check the YouTube icon in the portfolio's social links.";
+  }
+
+  if (
+    text.includes("who are you") ||
+    text.includes("about you")
+  ) {
+    return "🤖 I'm Subojit's portfolio assistant. I help visitors learn about his skills, projects, services, education, and technical interests.";
+  }
+
+  if (text.includes("help")) {
+    return "💡 Try asking: What are your skills? What projects have you made? What services do you offer? What are you studying? Or how can I contact you?";
+  }
+
+  return "🤖 I'm still learning! Try asking me about Skills, Projects, Services, Education, Cybersecurity, Cloud, YouTube, or Contact.";
 }
 
-chatForm.addEventListener("submit", ()=>{
-  const val = chatInput.value.trim();
-  if (!val) return;
-  // add user msg
-  const userDiv = document.createElement("div");
-  userDiv.className = "msg user";
-  userDiv.textContent = val;
-  chatBody.appendChild(userDiv);
+
+// ===== MESSAGE CREATOR =====
+function addMessage(message, type = "bot") {
+  const div = document.createElement("div");
+
+  div.className = `msg ${type}`;
+  div.textContent = message;
+
+  chatBody.appendChild(div);
   chatBody.scrollTop = chatBody.scrollHeight;
+
+  return div;
+}
+
+
+// ===== TYPING INDICATOR =====
+function showTyping() {
+  const typing = document.createElement("div");
+
+  typing.className = "msg bot typing-indicator";
+  typing.innerHTML = "<span></span><span></span><span></span>";
+
+  chatBody.appendChild(typing);
+  chatBody.scrollTop = chatBody.scrollHeight;
+
+  return typing;
+}
+
+
+// ===== SEND MESSAGE =====
+chatForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const val = chatInput.value.trim();
+
+  if (!val) return;
+
+  // User message
+  addMessage(val, "user");
+
   chatInput.value = "";
 
-  // bot reply after small delay
-  setTimeout(()=>{
+  // Bot typing animation
+  const typing = showTyping();
+
+  setTimeout(() => {
+    typing.remove();
+
     const reply = botReply(val);
-    const botDiv = document.createElement("div");
-    botDiv.className = "msg bot";
-    botDiv.textContent = reply;
-    chatBody.appendChild(botDiv);
-    chatBody.scrollTop = chatBody.scrollHeight;
+
+    addMessage(reply, "bot");
   }, 700);
 });
+
+
+// ===== ENTER KEY =====
+chatInput?.addEventListener("keydown", (event) => {
+  if (event.key === "Enter" && !event.shiftKey) {
+    event.preventDefault();
+    chatForm?.requestSubmit();
+  }
+});
+
+
+// ===== WELCOME MESSAGE =====
+if (chatBody && chatBody.children.length === 0) {
+  setTimeout(() => {
+    addMessage(
+      "Hi! 👋 I'm Subojit's AI-style portfolio assistant. How can I help you?"
+    );
+  }, 300);
+       }
