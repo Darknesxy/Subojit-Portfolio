@@ -8,7 +8,7 @@
 */
 
 // ===== typing / rotating roles =====
-const roles = ["Web Developer", "YouTuber", "Freelancer", "Front‑End Developer", "UI/UX Learner", "-Ethical Hacker"];
+const roles = ["Building For The Web", "YouTuber", "Exploring Cloud Security", "Learning Cyber Security", "Breaking Thing Ethically", "Cloud Security Learner"];
 const roleEl = document.getElementById("dynamicRole");
 let rIndex = 0, cIndex = 0, typing = true;
 
