@@ -58,8 +58,6 @@ function typeTick() {
 
 document.addEventListener("DOMContentLoaded", typeTick);
 
-
-
 // ===== hamburger for mobile nav =====
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
@@ -128,6 +126,7 @@ function setActiveLink(){
 }
 window.addEventListener("scroll", setActiveLink);
 window.addEventListener("load", setActiveLink);
+
 // ===== UPGRADED PORTFOLIO CHATBOT =====
 const chatToggle = document.getElementById("chatToggle");
 const chatWindow = document.getElementById("chatWindow");
@@ -321,4 +320,29 @@ if (chatBody && chatBody.children.length === 0) {
       "Hi! 👋 I'm Subojit's AI-style portfolio assistant. How can I help you?"
     );
   }, 300);
-       }
+}
+
+// ===== PROFESSIONAL SCROLL REVEAL =====
+const revealElements = document.querySelectorAll(
+  ".section, .home-section, .footer"
+);
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("reveal", "show");
+      } else {
+        entry.target.classList.remove("show");
+      }
+    });
+  },
+  {
+    threshold: 0.15
+  }
+);
+
+revealElements.forEach((element) => {
+  element.classList.add("reveal");
+  revealObserver.observe(element);
+});
