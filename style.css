@@ -490,3 +490,166 @@ body{
     max-width: 100%;
   }
 }
+
+/* =====================================================
+   PREMIUM CINEMATIC SCROLL ANIMATION
+   ===================================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(70px) scale(0.94);
+  filter: blur(12px);
+
+  transition:
+    opacity 0.9s ease,
+    transform 1s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.9s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+
+/* ===== SECTION GLOW ===== */
+
+.section.reveal.show {
+  animation: sectionGlow 1.2s ease forwards;
+}
+
+@keyframes sectionGlow {
+  0% {
+    box-shadow: inset 0 0 0 rgba(45,167,255,0);
+  }
+
+  50% {
+    box-shadow: inset 0 0 80px rgba(45,167,255,0.035);
+  }
+
+  100% {
+    box-shadow: inset 0 0 0 rgba(45,167,255,0);
+  }
+}
+
+
+/* =====================================================
+   CARD STAGGER ANIMATION
+   ===================================================== */
+
+.reveal .box-glow,
+.reveal .service-card,
+.reveal .proj,
+.reveal .stat-card {
+  opacity: 0;
+  transform: translateY(35px) scale(0.96);
+  filter: blur(5px);
+
+  transition:
+    opacity 0.65s ease,
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.65s ease;
+}
+
+.reveal.show .box-glow,
+.reveal.show .service-card,
+.reveal.show .proj,
+.reveal.show .stat-card {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+
+/* ===== STAGGER DELAYS ===== */
+
+.reveal.show .box-glow:nth-child(1),
+.reveal.show .service-card:nth-child(1),
+.reveal.show .proj:nth-child(1),
+.reveal.show .stat-card:nth-child(1) {
+  transition-delay: 0.08s;
+}
+
+.reveal.show .box-glow:nth-child(2),
+.reveal.show .service-card:nth-child(2),
+.reveal.show .proj:nth-child(2),
+.reveal.show .stat-card:nth-child(2) {
+  transition-delay: 0.18s;
+}
+
+.reveal.show .box-glow:nth-child(3),
+.reveal.show .service-card:nth-child(3),
+.reveal.show .proj:nth-child(3),
+.reveal.show .stat-card:nth-child(3) {
+  transition-delay: 0.28s;
+}
+
+.reveal.show .box-glow:nth-child(4),
+.reveal.show .service-card:nth-child(4),
+.reveal.show .proj:nth-child(4),
+.reveal.show .stat-card:nth-child(4) {
+  transition-delay: 0.38s;
+}
+
+
+/* =====================================================
+   SECTION TITLE REVEAL
+   ===================================================== */
+
+.reveal .section-title,
+.reveal .section-sub {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.7s ease;
+}
+
+.reveal.show .section-title,
+.reveal.show .section-sub {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal.show .section-sub {
+  transition-delay: 0.1s;
+}
+
+
+/* =====================================================
+   MOBILE PERFORMANCE
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+  .reveal {
+    transform: translateY(45px) scale(0.97);
+    filter: blur(7px);
+  }
+
+  .reveal .box-glow,
+  .reveal .service-card,
+  .reveal .proj,
+  .reveal .stat-card {
+    transform: translateY(25px) scale(0.98);
+    filter: blur(3px);
+  }
+}
+
+
+/* Respect reduced-motion settings */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .reveal,
+  .reveal .box-glow,
+  .reveal .service-card,
+  .reveal .proj,
+  .reveal .stat-card {
+    transition: none;
+    animation: none;
+    filter: none;
+    transform: none;
+  }
+}
