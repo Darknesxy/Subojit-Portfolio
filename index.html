@@ -686,9 +686,17 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">© 2025 • Made by Subojit</div>
-  </footer>
+<footer class="footer">
+  <div class="container">
+    © <span id="current-year"></span> • Made with ⚡ by <strong>Subojit Das Sarkar</strong>
+  </div>
+</footer>
+
+<script>
+  // Automatically sets the current year
+  document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+  
 
   <!-- DEMO CHATBOT (floating) -->
   <div id="chatbot">
