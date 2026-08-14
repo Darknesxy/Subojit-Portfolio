@@ -5442,3 +5442,39 @@ body{
   }
 
 }
+
+/* ================= HERO PROFILE — PERFECT CIRCLE FIX ================= */
+
+.avatar-wrap{
+  width:260px !important;
+  height:260px !important;
+  aspect-ratio:1 / 1;
+  border-radius:50%;
+  overflow:hidden;
+  flex-shrink:0;
+}
+
+.avatar-wrap img{
+  width:100% !important;
+  height:100% !important;
+  aspect-ratio:1 / 1;
+  display:block;
+  object-fit:cover;
+  border-radius:50% !important;
+}
+
+/* Mobile */
+@media (max-width:600px){
+  .avatar-wrap{
+    width:210px !important;
+    height:210px !important;
+  }
+}
+
+/* Small phones */
+@media (max-width:380px){
+  .avatar-wrap{
+    width:185px !important;
+    height:185px !important;
+  }
+}
