@@ -5527,3 +5527,359 @@ body{
   position:absolute !important;
   z-index:5 !important;
 }
+
+
+/* =========================================================
+   HERO AVATAR — PREMIUM PERFECT CIRCLE
+   ========================================================= */
+
+.avatar-wrap{
+  position:relative;
+
+  width:clamp(260px, 29vw, 360px);
+  aspect-ratio:1 / 1;
+  height:auto;
+
+  flex-shrink:0;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  isolation:isolate;
+}
+
+
+/* =========================
+   PHOTO
+   ========================= */
+
+.avatar-wrap img#mainAvatar{
+  position:absolute;
+  inset:10px;
+
+  width:calc(100% - 20px);
+  height:calc(100% - 20px);
+
+  display:block;
+
+  aspect-ratio:1 / 1;
+
+  object-fit:cover;
+  object-position:center 30%;
+
+  border-radius:50%;
+
+  border:1px solid rgba(255,255,255,.10);
+
+  background:#071022;
+
+  z-index:2;
+
+  box-shadow:
+    0 20px 55px rgba(0,0,0,.55),
+    0 0 35px rgba(45,167,255,.10);
+
+  transition:
+    transform .55s cubic-bezier(.2,.8,.2,1),
+    filter .35s ease,
+    box-shadow .35s ease;
+}
+
+
+/* =========================
+   OUTER PREMIUM RING
+   ========================= */
+
+.avatar-ring{
+  position:absolute;
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  border-radius:50%;
+
+  border:1px solid rgba(45,167,255,.42);
+
+  background:transparent;
+
+  z-index:3;
+
+  pointer-events:none;
+
+  box-shadow:
+    0 0 0 5px rgba(45,167,255,.025),
+    0 0 22px rgba(45,167,255,.12),
+    inset 0 0 18px rgba(45,167,255,.04);
+
+  animation:avatarRingPulse 4s ease-in-out infinite;
+}
+
+
+/* =========================
+   SECONDARY RING
+   ========================= */
+
+.avatar-wrap::before{
+  content:"";
+
+  position:absolute;
+  inset:-7px;
+
+  border-radius:50%;
+
+  border:1px solid rgba(45,167,255,.12);
+
+  z-index:1;
+
+  pointer-events:none;
+
+  box-shadow:
+    0 0 30px rgba(45,167,255,.06);
+}
+
+
+/* =========================
+   ROTATING ACCENT
+   ========================= */
+
+.avatar-wrap::after{
+  content:"";
+
+  position:absolute;
+  inset:-12px;
+
+  border-radius:50%;
+
+  background:
+    conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      transparent 285deg,
+      rgba(45,167,255,.0) 300deg,
+      rgba(45,167,255,.75) 325deg,
+      rgba(0,217,255,.9) 342deg,
+      transparent 360deg
+    );
+
+  -webkit-mask:
+    radial-gradient(
+      farthest-side,
+      transparent calc(100% - 2px),
+      #000 calc(100% - 1px)
+    );
+
+  mask:
+    radial-gradient(
+      farthest-side,
+      transparent calc(100% - 2px),
+      #000 calc(100% - 1px)
+    );
+
+  z-index:4;
+
+  pointer-events:none;
+
+  animation:avatarOrbit 7s linear infinite;
+}
+
+
+/* =========================
+   HOVER
+   ========================= */
+
+@media (hover:hover) and (pointer:fine){
+
+  .avatar-wrap:hover img#mainAvatar{
+    transform:scale(1.025);
+
+    filter:brightness(1.05);
+
+    box-shadow:
+      0 24px 65px rgba(0,0,0,.6),
+      0 0 45px rgba(45,167,255,.16);
+  }
+
+  .avatar-wrap:hover .avatar-ring{
+    border-color:rgba(45,167,255,.7);
+
+    box-shadow:
+      0 0 0 5px rgba(45,167,255,.035),
+      0 0 30px rgba(45,167,255,.18),
+      inset 0 0 20px rgba(45,167,255,.06);
+  }
+
+}
+
+
+/* =========================
+   RING ANIMATION
+   ========================= */
+
+@keyframes avatarRingPulse{
+
+  0%,100%{
+    opacity:.72;
+    transform:scale(1);
+  }
+
+  50%{
+    opacity:1;
+    transform:scale(1.008);
+  }
+
+}
+
+
+@keyframes avatarOrbit{
+
+  from{
+    transform:rotate(0deg);
+  }
+
+  to{
+    transform:rotate(360deg);
+  }
+
+}
+
+
+/* =========================
+   STATUS POSITION
+   ========================= */
+
+.hero-status{
+  position:absolute;
+
+  left:50%;
+  bottom:-23px;
+
+  transform:translateX(-50%);
+
+  z-index:8;
+
+  white-space:nowrap;
+
+  padding:8px 13px;
+
+  border-radius:999px;
+
+  background:rgba(5,10,18,.88);
+
+  border:1px solid rgba(255,255,255,.10);
+
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.4);
+
+  font-size:.65rem;
+  font-weight:600;
+
+  color:var(--muted);
+}
+
+
+/* =========================
+   SOCIAL LINKS SPACING
+   ========================= */
+
+.home-left .social-compact{
+  position:relative;
+  z-index:10;
+
+  margin-top:42px;
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width:950px){
+
+  .avatar-wrap{
+    width:clamp(230px, 34vw, 310px);
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width:700px){
+
+  .avatar-wrap{
+    width:min(78vw, 300px);
+  }
+
+  .avatar-wrap img#mainAvatar{
+    inset:8px;
+    width:calc(100% - 16px);
+    height:calc(100% - 16px);
+  }
+
+  .avatar-ring{
+    border-color:rgba(45,167,255,.35);
+  }
+
+  .avatar-wrap::before{
+    inset:-6px;
+  }
+
+  .avatar-wrap::after{
+    inset:-10px;
+  }
+
+  .hero-status{
+    bottom:-20px;
+    font-size:.59rem;
+  }
+
+  .home-left .social-compact{
+    margin-top:37px;
+  }
+
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+   ========================= */
+
+@media (max-width:380px){
+
+  .avatar-wrap{
+    width:76vw;
+  }
+
+  .hero-status{
+    padding:7px 10px;
+    font-size:.55rem;
+  }
+
+}
+
+
+/* =========================
+   REDUCED MOTION
+   ========================= */
+
+@media (prefers-reduced-motion:reduce){
+
+  .avatar-ring,
+  .avatar-wrap::after{
+    animation:none !important;
+  }
+
+  .avatar-wrap img#mainAvatar{
+    transition:none !important;
+  }
+
+}
