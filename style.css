@@ -5443,38 +5443,87 @@ body{
 
 }
 
-/* ================= HERO PROFILE — PERFECT CIRCLE FIX ================= */
+/* =========================================================
+   HERO AVATAR — PERFECT CIRCLE FIX
+   ========================================================= */
 
-.avatar-wrap{
+.home-section .home-left .avatar-wrap{
+  position:relative !important;
+
   width:260px !important;
   height:260px !important;
-  aspect-ratio:1 / 1;
-  border-radius:50%;
-  overflow:hidden;
-  flex-shrink:0;
+
+  min-width:260px !important;
+  min-height:260px !important;
+
+  max-width:260px !important;
+  max-height:260px !important;
+
+  aspect-ratio:1 / 1 !important;
+
+  margin:0 auto !important;
+
+  border-radius:50% !important;
+  overflow:hidden !important;
 }
 
-.avatar-wrap img{
+
+/* PROFILE IMAGE */
+
+.home-section .home-left .avatar-wrap img#mainAvatar{
+  position:relative !important;
+  z-index:2 !important;
+
+  display:block !important;
+
   width:100% !important;
   height:100% !important;
-  aspect-ratio:1 / 1;
-  display:block;
-  object-fit:cover;
+
+  min-width:100% !important;
+  min-height:100% !important;
+
+  max-width:none !important;
+  max-height:none !important;
+
+  aspect-ratio:1 / 1 !important;
+
+  object-fit:cover !important;
+  object-position:center !important;
+
   border-radius:50% !important;
 }
 
-/* Mobile */
-@media (max-width:600px){
-  .avatar-wrap{
-    width:210px !important;
-    height:210px !important;
-  }
+
+/* GLOW */
+
+.home-section .avatar-glow{
+  position:absolute !important;
+  inset:-15px !important;
+
+  border-radius:50% !important;
+
+  pointer-events:none !important;
 }
 
-/* Small phones */
-@media (max-width:380px){
-  .avatar-wrap{
-    width:185px !important;
-    height:185px !important;
-  }
+
+/* RING */
+
+.home-section .avatar-ring{
+  position:absolute !important;
+  inset:0 !important;
+
+  width:100% !important;
+  height:100% !important;
+
+  border-radius:50% !important;
+
+  pointer-events:none !important;
+}
+
+
+/* STATUS PILL */
+
+.home-section .hero-status{
+  position:absolute !important;
+  z-index:5 !important;
 }
